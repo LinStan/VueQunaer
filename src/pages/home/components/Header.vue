@@ -1,0 +1,68 @@
+<template>
+  <div class="header">
+    <div class="header-left">
+      <div class="iconfont">&#58916;</div>
+    </div>
+    <div class="header-input">
+      <span class="iconfont">&#58930;</span>
+      输入城市/景点/主题
+    </div>
+    <div class="header-right">
+      城市
+      <span class="iconfont arrow-icon">&#58954; </span>
+      <!-- 也可手动绘制三角形 -->
+      <!-- <span
+        style="
+      width: 0;
+      height: 0;
+      border-left: 0.2rem solid transparent;
+      border-right: 0.2rem solid transparent;
+      border-top: 0.2rem solid #fff;"
+      ></span> -->
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'HomeHeader'
+}
+</script>
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style lang='stylus' scoped>
+@import '~styles/varibles.styl';
+
+.header {
+  display: flex;
+  line-height: 0.86rem;
+  background: $bgColor;
+  color: #fff;
+  text-align: center;
+
+  .header-left {
+    width: 0.64rem;
+    float: left;
+  }
+
+  .header-input {
+    flex: 1;
+    height: 0.64rem;
+    line-height: 0.64rem;
+    margin-top: 0.12rem;
+    margin-left: 0.2rem;
+    border-radius: 0.1rem;
+    background: #fff;
+    color: #ccc;
+  }
+
+  .header-right {
+    width: 1.24rem;
+    float: right;
+
+    .arrow-icon {
+      margin-left: -0.04rem;
+      font-size: 0.24rem;
+    }
+  }
+}
+</style>
