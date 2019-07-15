@@ -12,6 +12,16 @@ Vue2.5开发去哪儿核心网页(课程项目)
 
 完成首页轮播图  
 使用第三方插件 vue-awesome-swiper  
+使用css实现图片宽度高度成固定比例：
+>一个元素的 padding，如果值是一个百分比，那这个百分比是相对于其父元素的宽度而言的，即使对于 padding-bottom 和 padding-top 也是如此。  
+>在计算 Overflow 时，是将元素的内容区域（即 width / height 对应的区域）和 Padding 区域一起计算的。换句话说，即使将元素的 overflow 设置为 hidden，“溢出”到 Padding 区域的内容也会照常显示。  
+>综上两条所述，我们可以使用 padding-bottom 来代替 height 来实现高度与宽度成比例的效果。同时将其 height 设置为 0 以使元素的“高度”等于 padding-bottom 的值。下面代码就是一个宽高比为2:1的div
+
+```javascript
+overflow:hidden;
+height: 0;
+padding-bottom: 50%;
+```
 
 ## 第三次提交
 
@@ -42,3 +52,7 @@ Vue2.5开发去哪儿核心网页(课程项目)
 
 使用基本指令完成推荐景点功能  
 文本过长省略号不显示的问题可以通过设置min-width:0解决
+
+## 第五次提交
+
+完成周末去哪儿模块，首页基本布局完成 实现过程是简单的指令应用

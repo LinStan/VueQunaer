@@ -4,15 +4,15 @@
     <ul>
       <li
         class="item border-bottom"
-        v-for="recommend of recommendList"
-        :key="recommend.id"
+        v-for="item of recommendList"
+        :key="item.id"
       >
-        <!-- <div class="item-img-wrapper"> -->
-        <img :src="recommend.imgurl" :alt="recommend.id" class="item-img" />
-        <!-- </div> -->
+        <div class="item-img-wrapper">
+          <img :src="item.imgurl" :alt="item.id" class="item-img" />
+        </div>
         <div class="item-info">
-          <p class="item-title">{{ recommend.title }}</p>
-          <p class="item-desc">{{ recommend.desc }}</p>
+          <p class="item-title">{{ item.title }}</p>
+          <p class="item-desc">{{ item.desc }}</p>
           <button class="item-button">查看详情</button>
         </div>
       </li>
@@ -93,10 +93,11 @@ export default {
     }
 
     .item-button {
-      padding: 0.1rem;
+      padding: 0.05rem;
       border-radius: 0.06rem;
       margin-top: 0.2rem;
-      color: #ffffff;
+      background: #ff9300;
+      color: #fff;
     }
   }
 }
