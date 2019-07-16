@@ -78,3 +78,6 @@ padding-bottom: 50%;
 
 v-for循环Object需要用key做key而不是index  
 axios获取cities数据并进行渲染  
+使用props emit 实现兄弟组件传值  
+完成根据字母定位列表位置以及字母表拖动事件  应用节流函数  
+应用watch监听  

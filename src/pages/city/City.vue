@@ -3,12 +3,14 @@
     <!-- {{ LocationCity }} -->
     <city-header></city-header>
     <city-search></city-search>
+    <!-- 传给list组件 -->
     <city-list
       :LocationCity="LocationCity"
       :cities="cities"
       :hotCities="hotCities"
+      :letter="letter"
     ></city-list>
-    <city-alphabet :cities="cities"></city-alphabet>
+    <city-alphabet :cities="cities" @change="change"></city-alphabet>
   </div>
 </template>
 <script>
@@ -25,10 +27,16 @@ export default {
     return {
       LocationCity: '正在定位',
       cities: {},
-      hotCities: []
+      hotCities: [],
+      letter: ''
     }
   },
   methods: {
+    // 接收子组件传来的数据
+    change (e) {
+      // console.log('father    ' + e)
+      this.letter = e.toString()
+    },
     getCity () { // 定义获取城市方法
       const geolocation = new BMap.Geolocation()
       var _this = this
@@ -47,7 +55,7 @@ export default {
     },
     getCityInfoSucc (res) {
       const data = res.data
-      console.log(data)
+      // console.log(data)
       if (data.ret && data.data) {
         this.cities = data.data.cities
         this.hotCities = data.data.hotCities

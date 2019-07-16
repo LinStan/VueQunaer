@@ -22,7 +22,7 @@
         </div>
       </div>
       <!-- 循环对象的时候使用key而不是index -->
-      <div class="area" v-for="(item, key) of cities" :key="key">
+      <div class="area" v-for="(item, key) of cities" :key="key" :ref="key">
         <div class="title border-topbottom">{{ key }}</div>
         <ul class="item-list ">
           <li
@@ -41,6 +41,11 @@
 import Bscroll from 'better-scroll'
 export default {
   name: 'CityList',
+  props: {
+    LocationCity: String,
+    cities: Object,
+    hotCities: Array,
+    letter: String },
   // this.$nextTick 的回调函数中初始化 better-scroll 。这个时候，wrapper 的 DOM 已经渲染了
   // 可以正确计算它以及它内层 content 的高度，以确保滚动正常。
   mounted () {
@@ -48,10 +53,20 @@ export default {
       this.scroll = new Bscroll(this.$refs.wrapper, {})
     })
   },
-  props: {
-    LocationCity: String,
-    cities: Object,
-    hotCities: Array }
+  // 监听letter
+  watch: {
+    letter () {
+      // 如果letter变化
+      if (this.letter) {
+        // console.log(this.letter)
+        // $refs获取到的是一个对象{A:Array} [this.letter]获取到的是一个元素数组
+        // 由于我们需要里面的div 因此还要一个[0]
+        const element = this.$refs[this.letter][0]
+        // console.log(element)
+        this.scroll.scrollToElement(element)
+      }
+    }
+  }
 }
 </script>
 <style lang="stylus" scoped>
