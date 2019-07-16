@@ -1,6 +1,6 @@
 <template>
   <div class="icons">
-    <swiper>
+    <swiper :options="swiperOption" v-if="this.iconList.length">
       <swiper-slide v-for="(page, index) of pages" :key="index">
         <div class="icon" v-for="item of page" :key="item.id">
           <div class="icon-img">
@@ -15,47 +15,11 @@
 <script>
 export default {
   name: 'HomeIcons',
+  props: { iconList: Array },
   data () {
-    return {
-      iconList: [
-        {
-          id: '001',
-          imgurl: '//s.qunarzz.com/travel/travel_hy2/2019/gonglue.png',
-          desc: '攻略'
-        }, {
-          id: '002',
-          imgurl: '//s.qunarzz.com/travel/travel_hy2/2019/bitiyan.png',
-          desc: '旅行榜单'
-        }, {
-          id: '003',
-          imgurl: '//s.qunarzz.com/travel/travel_hy2/2019/jingdian.png',
-          desc: '景点'
-        }, {
-          id: '004',
-          imgurl: '//s.qunarzz.com/travel/travel_hy2/2019/zhusu.png',
-          desc: '酒店'
-        }, {
-          id: '005',
-          imgurl: '//s.qunarzz.com/travel/travel_hy2/2019/tesetiyan.png',
-          desc: '玩乐'
-        }, {
-          id: '006',
-          imgurl: '//s.qunarzz.com/travel/travel_hy2/2019/tesecai.png',
-          desc: '美食'
-        }, {
-          id: '007',
-          imgurl: '//s.qunarzz.com/travel/travel_hy2/2019/gouwu.png',
-          desc: '购物'
-        }, {
-          id: '008',
-          imgurl: '//s.qunarzz.com/travel/travel_hy2/2019/luxian.png',
-          desc: '路线'
-        }, {
-          id: '009',
-          imgurl: '//s.qunarzz.com/travel/travel_hy2/2019/wenda.png',
-          desc: '问答'
-        }
-      ]
+    return { swiperOption: {
+      autoplay: false
+    }
     }
   },
   computed: {

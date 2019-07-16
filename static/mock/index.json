@@ -1,0 +1,131 @@
+{
+  "ret": true,
+  "data": {
+    "city": "北京",
+    "swiperList": [
+      {
+        "id": "001",
+        "imgurl": "https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/c77f34caa4ddb00d8129569fe759c0f1.jpg_r_640x290x70_266a1287.jpg"
+      },
+      {
+        "id": "002",
+        "imgurl": "https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/9ed5bbc902f94e3e2b8dea92a054ea93.jpg_r_640x290x70_d79fc9b3.jpg"
+      },
+      {
+        "id": "003",
+        "imgurl": "https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/dedbb6909d50756c0ce7ad3cf8029e52.jpg_r_640x290x70_f741802b.jpg"
+      }
+    ],
+    "iconList": [
+      {
+        "id": "001",
+        "imgurl": "//s.qunarzz.com/travel/travel_hy2/2019/gonglue.png",
+        "desc": "攻略"
+      },
+      {
+        "id": "002",
+        "imgurl": "//s.qunarzz.com/travel/travel_hy2/2019/bitiyan.png",
+        "desc": "旅行榜单"
+      },
+      {
+        "id": "003",
+        "imgurl": "//s.qunarzz.com/travel/travel_hy2/2019/jingdian.png",
+        "desc": "景点"
+      },
+      {
+        "id": "004",
+        "imgurl": "//s.qunarzz.com/travel/travel_hy2/2019/zhusu.png",
+        "desc": "酒店"
+      },
+      {
+        "id": "005",
+        "imgurl": "//s.qunarzz.com/travel/travel_hy2/2019/tesetiyan.png",
+        "desc": "玩乐"
+      },
+      {
+        "id": "006",
+        "imgurl": "//s.qunarzz.com/travel/travel_hy2/2019/tesecai.png",
+        "desc": "美食"
+      },
+      {
+        "id": "007",
+        "imgurl": "//s.qunarzz.com/travel/travel_hy2/2019/gouwu.png",
+        "desc": "购物"
+      },
+      {
+        "id": "008",
+        "imgurl": "//s.qunarzz.com/travel/travel_hy2/2019/luxian.png",
+        "desc": "路线"
+      },
+      {
+        "id": "009",
+        "imgurl": "//s.qunarzz.com/travel/travel_hy2/2019/wenda.png",
+        "desc": "问答"
+      }
+    ],
+    "recommendList": [
+      {
+        "id": "001",
+        "imgurl": "http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_140x140_80f63803.jpg",
+        "title": "故宫",
+        "desc": "东方宫殿建筑代表，世界宫殿建筑典范"
+      },
+      {
+        "id": "002",
+        "imgurl": "http://img1.qunarzz.com/sight/p0/1511/d2/d2aec2dfc5aa771290.water.jpg_140x140_abb362a7.jpg",
+        "title": "南山滑雪场",
+        "desc": "北京专业级滑雪圣地"
+      },
+      {
+        "id": "003",
+        "imgurl": "http://img1.qunarzz.com/sight/p0/1501/f4/f467729126949c3a.water.jpg_140x140_ef235b1c.jpg",
+        "title": "天安门广场",
+        "desc": "我爱北京天安门，天安门上太阳升"
+      },
+      {
+        "id": "004",
+        "imgurl": "http://img1.qunarzz.com/sight/p0/1501/40/40b2b6c951b28fdd.water.jpg_140x140_1c863e5c.jpg",
+        "title": "水立方",
+        "desc": "中国的荣耀，阳光下的晶莹水滴"
+      },
+      {
+        "id": "005",
+        "imgurl": "http://img1.qunarzz.com/sight/p0/201308/23/b283071686e64dfec8d65eac.jpg_140x140_8c5a7c49.jpg",
+        "title": "温都水城养生馆",
+        "desc": "各种亚热带植物掩映其间仿佛置身热带雨林"
+      }
+    ],
+    "weekendList": [
+      {
+        "id": "001",
+        "imgurl": "http://img1.qunarzz.com/sight/source/1510/6e/1ea71e2f04e.jpg_r_640x214_aa6f091d.jpg",
+        "title": "北京温泉排行榜",
+        "desc": "细数北京温泉，温暖你的冬天"
+      },
+      {
+        "id": "002",
+        "imgurl": "http://img1.qunarzz.com/sight/source/1505/aa/7baaf8a851d221.jpg_r_640x214_1431200f.jpg",
+        "title": "北京必游TOP10",
+        "desc": "来北京必去的景点非这些地方莫属"
+      },
+      {
+        "id": "003",
+        "imgurl": "http://img1.qunarzz.com/sight/source/1505/9e/21df651e19af5d.jpg_r_640x214_3ea5bb38.jpg",
+        "title": "寻找北京的皇城范儿",
+        "desc": "数百年的宫廷庙宇，至今依旧威严霸气"
+      },
+      {
+        "id": "004",
+        "imgurl": "http://img1.qunarzz.com/sight/source/1505/ce/bc89bc2f0e33ea.jpg_r_640x214_3e408453.jpg",
+        "title": "学生最爱的博物馆",
+        "desc": "周末干嘛？北京很多博物馆已经免费开放啦"
+      },
+      {
+        "id": "005",
+        "imgurl": "http://img1.qunarzz.com/sight/source/1505/b2/fde1bfcd057a52.jpg_r_640x214_bbf3fa44.jpg",
+        "title": "儿童剧场，孩子的乐园",
+        "desc": "带宝贝观看演出，近距离体验艺术的无穷魅力"
+      }
+    ]
+  }
+}

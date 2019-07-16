@@ -8,7 +8,7 @@
       输入城市/景点/主题
     </div>
     <div class="header-right">
-      城市
+      {{ headercity }}
       <span class="iconfont arrow-icon">&#58954; </span>
       <!-- 也可手动绘制三角形 -->
       <!-- <span
@@ -25,7 +25,8 @@
 
 <script>
 export default {
-  name: 'HomeHeader'
+  name: 'HomeHeader',
+  props: { 'headercity': String }
 }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
