@@ -62,4 +62,8 @@ padding-bottom: 50%;
 将数据改为由axios获取  
 配置proxy路径请求映射  /config/index.js/proxyTable  
 将之前HOME组件下的数据都统一在Home进行分发，练习组件传值  
-注意一下 由于icon需要进行分页操作，因此如果立即创建swiper会导致创建一个空的swiper 可以通过v-if来限制  
+注意一下 由于icon需要进行分页操作，因此如果立即创建swiper会导致创建一个空的swiper 可以通过v-if来限制 
+
+## 第七次提交
+
+利用百度云api完成当前城市定位以及城市选择页面的顶部栏

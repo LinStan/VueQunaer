@@ -7,11 +7,14 @@
       <span class="iconfont">&#58930;</span>
       输入城市/景点/主题
     </div>
-    <div class="header-right">
-      {{ headercity }}
-      <span class="iconfont arrow-icon">&#58954; </span>
-      <!-- 也可手动绘制三角形 -->
-      <!-- <span
+    <router-link to="/city">
+      <div class="header-right">
+        {{ headercity }}
+        <span class="iconfont arrow-icon">&#58954; </span>
+      </div>
+    </router-link>
+    <!-- 也可手动绘制三角形 -->
+    <!-- <span
         style="
       width: 0;
       height: 0;
@@ -19,7 +22,6 @@
       border-right: 0.2rem solid transparent;
       border-top: 0.2rem solid #fff;"
       ></span> -->
-    </div>
   </div>
 </template>
 
@@ -59,6 +61,7 @@ export default {
   .header-right {
     width: 1.24rem;
     float: right;
+    color: #fff;
 
     .arrow-icon {
       margin-left: -0.04rem;
