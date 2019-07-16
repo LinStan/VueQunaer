@@ -16,43 +16,22 @@
           热门城市
         </div>
         <div class="button-list">
-          <div class="button-wrapper">
-            <div class="button">北京</div>
-          </div>
-          <div class="button-wrapper">
-            <div class="button">北京</div>
-          </div>
-          <div class="button-wrapper">
-            <div class="button">北京</div>
-          </div>
-          <div class="button-wrapper">
-            <div class="button">北京</div>
+          <div class="button-wrapper" v-for="item of hotCities" :key="item.id">
+            <div class="button">{{ item.name }}</div>
           </div>
         </div>
       </div>
-      <div class="area">
-        <div class="title border-topbottom">A</div>
+      <!-- 循环对象的时候使用key而不是index -->
+      <div class="area" v-for="(item, key) of cities" :key="key">
+        <div class="title border-topbottom">{{ key }}</div>
         <ul class="item-list ">
-          <li class="item border-bottom">杭州</li>
-          <li class="item border-bottom">杭州</li>
-          <li class="item border-bottom">杭州</li>
-          <li class="item border-bottom">杭州</li>
-          <li class="item border-bottom">杭州</li>
-          <li class="item border-bottom">杭州</li>
-          <li class="item border-bottom">杭州</li>
-          <li class="item border-bottom">杭州</li>
-          <li class="item border-bottom">杭州</li>
-          <li class="item border-bottom">杭州</li>
-          <li class="item border-bottom">杭州</li>
-          <li class="item border-bottom">杭州</li>
-          <li class="item border-bottom">杭州</li>
-          <li class="item border-bottom">杭州</li>
-          <li class="item border-bottom">杭州</li>
-          <li class="item border-bottom">杭州</li>
-          <li class="item border-bottom">杭州</li>
-          <li class="item border-bottom">杭州</li>
-          <li class="item border-bottom">杭州</li>
-          <li class="item border-bottom">杭州</li>
+          <li
+            class="item border-bottom"
+            v-for="innerItem of item"
+            :key="innerItem.id"
+          >
+            {{ innerItem.name }}
+          </li>
         </ul>
       </div>
     </div>
@@ -69,7 +48,10 @@ export default {
       this.scroll = new Bscroll(this.$refs.wrapper, {})
     })
   },
-  props: { LocationCity: String }
+  props: {
+    LocationCity: String,
+    cities: Object,
+    hotCities: Array }
 }
 </script>
 <style lang="stylus" scoped>
@@ -102,10 +84,10 @@ export default {
 
   .button-list {
     overflow: hidden;
-    padding: 0.1rem 0.6rem 0.1rem 0.1rem;
+    padding: 0.1rem 0.4rem 0.1rem 0.1rem;
 
     .button-wrapper {
-      width: 30%;
+      width: 31%;
       float: left;
       padding: 0.05rem;
 

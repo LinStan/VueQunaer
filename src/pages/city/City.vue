@@ -3,8 +3,12 @@
     <!-- {{ LocationCity }} -->
     <city-header></city-header>
     <city-search></city-search>
-    <city-list :LocationCity="LocationCity"></city-list>
-    <city-alphabet></city-alphabet>
+    <city-list
+      :LocationCity="LocationCity"
+      :cities="cities"
+      :hotCities="hotCities"
+    ></city-list>
+    <city-alphabet :cities="cities"></city-alphabet>
   </div>
 </template>
 <script>
@@ -13,12 +17,15 @@ import CitySearch from './components/Search'
 import CityList from './components/List'
 import CityAlphabet from './components/Alphabet'
 import BMap from 'BMap'
+import axios from 'axios'
 export default {
   name: 'City',
   components: { CityHeader, CitySearch, CityList, CityAlphabet },
   data () {
     return {
-      LocationCity: '正在定位'
+      LocationCity: '正在定位',
+      cities: {},
+      hotCities: []
     }
   },
   methods: {
@@ -32,10 +39,24 @@ export default {
       }, function (e) {
         _this.LocationCity = '定位失败'
       }, { provider: 'baidu' })
+    },
+    getCityInfo () {
+      axios.get('/api/city.json').then(
+        this.getCityInfoSucc
+      )
+    },
+    getCityInfoSucc (res) {
+      const data = res.data
+      console.log(data)
+      if (data.ret && data.data) {
+        this.cities = data.data.cities
+        this.hotCities = data.data.hotCities
+      }
     }
   },
   mounted () {
     this.getCity()
+    this.getCityInfo()
   }
 }
 </script>

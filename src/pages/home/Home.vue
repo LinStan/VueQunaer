@@ -54,7 +54,7 @@ export default {
         this.weekendList = data.weekendList
       }
 
-      console.log(res)
+      // console.log(res)
     }
     // getCity () { // 定义获取城市方法
     //   const geolocation = new BMap.Geolocation()

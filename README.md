@@ -70,6 +70,11 @@ padding-bottom: 50%;
 
 ## 第八次提交
 
-完成city页面布局实现
+完成city页面布局实现  
 进入city组件自动定位当前城市  
 基于better-scroll实现滑动  
+
+## 第九次提交
+
+v-for循环Object需要用key做key而不是index  
+axios获取cities数据并进行渲染  
