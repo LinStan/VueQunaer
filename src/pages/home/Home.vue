@@ -6,7 +6,7 @@
     <home-icons :iconList="iconList"></home-icons>
     <home-recommend :recommendList="recommendList"></home-recommend>
     <home-weekend :weekendList="weekendList"></home-weekend>
-    {{ LocationCity }}
+    <!-- {{ LocationCity }} -->
   </div>
 </template>
 
@@ -17,7 +17,6 @@ import HomeIcons from './components/Icons'
 import HomeRecommend from './components/Recommend'
 import HomeWeekend from './components/Weekend'
 import axios from 'axios'
-import BMap from 'BMap'
 export default {
   name: 'Home',
   components: { HomeHeader,
@@ -32,8 +31,8 @@ export default {
       swiperList: [],
       iconList: [],
       recommendList: [],
-      weekendList: [],
-      LocationCity: '正在定位'
+      weekendList: []
+      // LocationCity: '正在定位'
 
     }
   },
@@ -56,22 +55,22 @@ export default {
       }
 
       console.log(res)
-    },
-    getCity () { // 定义获取城市方法
-      const geolocation = new BMap.Geolocation()
-      var _this = this
-      geolocation.getCurrentPosition(function getinfo (position) {
-        let city = position.address.city // 获取城市信息
-        // let province = position.address.province // 获取省份信息
-        _this.LocationCity = city
-      }, function (e) {
-        _this.LocationCity = '定位失败'
-      }, { provider: 'baidu' })
     }
+    // getCity () { // 定义获取城市方法
+    //   const geolocation = new BMap.Geolocation()
+    //   var _this = this
+    //   geolocation.getCurrentPosition(function getinfo (position) {
+    //     let city = position.address.city // 获取城市信息
+    //     // let province = position.address.province // 获取省份信息
+    //     _this.LocationCity = city
+    //   }, function (e) {
+    //     _this.LocationCity = '定位失败'
+    //   }, { provider: 'baidu' })
+    // }
   },
   mounted () {
     this.getHomeInfo()
-    this.getCity()
+    // this.getCity()
   }
 }
 </script>

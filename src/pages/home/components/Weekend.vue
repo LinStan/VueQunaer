@@ -26,11 +26,12 @@ export default {
 </script>
 <style lang="stylus" scoped>
 @import '~styles/mixins.styl';
+@import '~styles/varibles.styl';
 
 .weekend-title {
   margin-top: 0.2rem;
   line-height: 0.8rem;
-  background: #eee;
+  background: $titleBgColor;
   text-indent: 0.2rem;
 }
 
