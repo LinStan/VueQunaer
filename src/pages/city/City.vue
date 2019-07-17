@@ -2,7 +2,7 @@
   <div>
     <!-- {{ LocationCity }} -->
     <city-header></city-header>
-    <city-search></city-search>
+    <city-search :cities="cities"></city-search>
     <!-- 传给list组件 -->
     <city-list
       :LocationCity="LocationCity"

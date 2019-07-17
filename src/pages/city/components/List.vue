@@ -85,7 +85,7 @@ export default {
 .list {
   overflow: hidden;
   position: absolute;
-  top: $headerHeight + 1.02rem;
+  top: $cityTopHeight;
   left: 0;
   right: 0;
   bottom: 0;

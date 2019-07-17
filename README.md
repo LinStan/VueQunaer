@@ -1,6 +1,14 @@
 # VueQunaer
 
-Vue2.5开发去哪儿核心网页(课程项目)
+Vue2.5开发去哪儿核心网页(首页，城市选择，详情页)
+
+* 第三方插件：
+  * Bmap
+  * vue-awesome-swiper
+  * better-scroll
+  * axios
+
+启动项目 npm dev run
 
 ## 第一次提交
 
@@ -44,7 +52,7 @@ padding-bottom: 50%;
 
 ```javascript
 .icons >>> .swiper-container {
-  height: 0; 
+  height: 0;
   height: 100%;//之前写成100%就会将未轮播到的swiper标签的位置也空出来
   padding-bottom: 50%;
 }
@@ -81,3 +89,8 @@ axios获取cities数据并进行渲染
 使用props emit 实现兄弟组件传值  
 完成根据字母定位列表位置以及字母表拖动事件  应用节流函数  
 应用watch监听  
+
+## 第十次提交
+
+基于watch完成根据拼音和文字匹配搜索功能实现  
+添加节流函数减少计算开支  
