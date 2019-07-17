@@ -40,13 +40,16 @@ export default {
     getCity () { // 定义获取城市方法
       const geolocation = new BMap.Geolocation()
       var _this = this
+      // console.log(_this.LocationCity)
       geolocation.getCurrentPosition(function getinfo (position) {
         let city = position.address.city // 获取城市信息
         // let province = position.address.province // 获取省份信息
-        _this.LocationCity = city
+        // 城市名字规格保持统一
+        _this.LocationCity = city.substr(0, city.length - 1)
       }, function (e) {
         _this.LocationCity = '定位失败'
       }, { provider: 'baidu' })
+      // console.log(_this.LocationCity)
     },
     getCityInfo () {
       axios.get('/api/city.json').then(

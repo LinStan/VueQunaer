@@ -1,7 +1,8 @@
 <template>
   <div>
     <!-- props给子组件传值 -->
-    <home-header :headercity="city"></home-header>
+    <!-- <home-header :headercity="city"></home-header> -->
+    <home-header></home-header>
     <home-swiper :swiperList="swiperList"></home-swiper>
     <home-icons :iconList="iconList"></home-icons>
     <home-recommend :recommendList="recommendList"></home-recommend>

@@ -9,7 +9,8 @@
     </div>
     <router-link to="/city">
       <div class="header-right">
-        {{ headercity }}
+        <!-- vuex在main.js 引入后 所有子组件都可以使用store直接访问 -->
+        {{ this.$store.state.city }}
         <span class="iconfont arrow-icon">&#58954; </span>
       </div>
     </router-link>
@@ -27,8 +28,8 @@
 
 <script>
 export default {
-  name: 'HomeHeader',
-  props: { 'headercity': String }
+  name: 'HomeHeader'
+  // props: { 'headercity': String }
 }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -59,7 +60,7 @@ export default {
   }
 
   .header-right {
-    width: 1.24rem;
+    width: 1.6rem;
     float: right;
     color: #fff;
 

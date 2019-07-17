@@ -11,7 +11,12 @@
     </div>
     <div class="search-content" v-show="keyword.length !== 0" ref="search">
       <ul>
-        <li v-for="item of list" :key="item.id" class="search-ret">
+        <li
+          v-for="item of list"
+          :key="item.id"
+          class="search-ret"
+          @click="handleCityClick(item.name)"
+        >
           {{ item.name }}
         </li>
         <li v-show="!hasNoRet" class="search-ret">没有匹配的城市</li>
@@ -35,6 +40,13 @@ export default {
   computed: {
     hasNoRet () {
       return this.list.length
+    }
+  },
+  methods: {
+    handleCityClick (city) {
+      // 触发vuex内的action
+      this.$store.dispatch('changeCity', city)
+      this.$router.push('/')
     }
   },
   watch: {
