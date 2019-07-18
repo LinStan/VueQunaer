@@ -13,19 +13,23 @@
         </div>
       </div>
     </div>
-    <detail-gallary
-      v-show="showGallary"
-      :imgs="imgs"
-      @close="handleGallaryClose"
-    >
-    </detail-gallary>
+    <!-- 将gallary插入到fade中 -->
+    <fade-animation
+      ><detail-gallary
+        v-show="showGallary"
+        :imgs="imgs"
+        @close="handleGallaryClose"
+      >
+      </detail-gallary
+    ></fade-animation>
   </div>
 </template>
 <script>
 import DetailGallary from './Gallary'
+import FadeAnimation from './Fade'
 export default {
   name: 'DetailBanner',
-  components: { DetailGallary },
+  components: { DetailGallary, FadeAnimation },
   props: {
     sightName: String,
     imgs: Array,

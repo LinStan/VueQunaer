@@ -1,6 +1,6 @@
 # VueQunaer
 
-Vue2.5开发去哪儿核心网页(首页，城市选择，详情页)
+Vue2.5开发去哪儿核心网页(首页，城市选择，详情页)√
 
 * 第三方插件：
   * Bmap
@@ -131,3 +131,8 @@ background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
 练习递归组件的使用 组件可以直接通过标签调用自身 注意租价内数据,不要形成死循环  
 axios获取detail组件内容  
 处理进入不同详情页重新进行Ajax请求  通过exclude实现
+
+## 第十六次提交
+
+给Gallary添加了一个简单的动画效果  
+应用插槽slot和vue动画v-enter, v-leave-to | v-enter-active, v-leave-active  
