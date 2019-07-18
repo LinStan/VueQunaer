@@ -124,3 +124,10 @@ background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
 注意一下画廊组件的CSS写法  由于swiper内置css有overflow hidden的属性,需要写一个css穿透来修改该属性为inherit  
 完成Detail中的Header栏随着滑动渐隐并变换  
 注意 滚动监听事件的解绑  通过activated和deactivated两个生命钩子函数实现  
+由于15次提交改动了detail不参与keepalive 因此改用mounted和unmounted实现  
+
+## 第十五次提交
+
+练习递归组件的使用 组件可以直接通过标签调用自身 注意租价内数据,不要形成死循环  
+axios获取detail组件内容  
+处理进入不同详情页重新进行Ajax请求  通过exclude实现

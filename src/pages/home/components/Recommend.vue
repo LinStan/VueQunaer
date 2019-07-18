@@ -9,7 +9,7 @@
         class="item border-bottom"
         v-for="item of recommendList"
         :key="item.id"
-        :to="'/detail'"
+        :to="'/detail/' + item.id"
       >
         <div class="item-img-wrapper">
           <img :src="item.imgurl" :alt="item.id" class="item-img" />

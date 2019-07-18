@@ -1,14 +1,16 @@
 <template>
   <div>
-    <div class="item" v-for="(item, index) of this.list" :key="index">
+    <div class="item" v-for="(item, index) of list" :key="index">
       <div class="item-title border-bottom">
         <span class="item-title-icon"></span>
         {{ item.title }}
       </div>
       <div v-if="item.children" class="item-chilren">
-        <li v-for="(inneritem, index) of item.children" :key="index">
+        <!-- 组件可以直接调用自身 注意自身数据不要变成死循环-->
+        <detail-list :list="item.children"></detail-list>
+        <!-- <li v-for="(inneritem, index) of item.children" :key="index">
           {{ inneritem.title }}
-        </li>
+        </li> -->
       </div>
     </div>
   </div>
@@ -19,56 +21,11 @@ export default {
   name: 'DetailList',
   data () {
     return {
-      list: [{
-        'title': '成人票',
-        'children': [{
-          'title': '成人三馆联票',
-          'children': [{
-            'title': '成人三馆联票 - 某一连锁店销售'
-          }]
-        }, {
-          'title': '成人五馆联票'
-        }]
-      }, {
-        'title': '学生票'
-      }, {
-        'title': '儿童票'
-      }, {
-        'title': '特惠票'
-      }, {
-        'title': '学生票'
-      }, {
-        'title': '儿童票'
-      }, {
-        'title': '特惠票'
-      }, {
-        'title': '学生票'
-      }, {
-        'title': '儿童票'
-      }, {
-        'title': '特惠票'
-      }, {
-        'title': '学生票'
-      }, {
-        'title': '儿童票'
-      }, {
-        'title': '特惠票'
-      }, {
-        'title': '学生票'
-      }, {
-        'title': '儿童票'
-      }, {
-        'title': '特惠票'
-      }, {
-        'title': '特惠票'
-      }, {
-        'title': '学生票'
-      }, {
-        'title': '儿童票'
-      }, {
-        'title': '特惠票'
-      }]
+      // list:
     }
+  },
+  props: {
+    list: Array
   }
 }
 </script>

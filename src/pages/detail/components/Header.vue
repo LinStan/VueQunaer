@@ -9,7 +9,7 @@
       <router-link to="/">
         <div class="iconfont header-fixed-back">&#xe624;</div>
       </router-link>
-      景点详情
+      {{ sightName }}
     </div>
   </div>
 </template>
@@ -17,6 +17,9 @@
 <script>
 export default {
   name: 'DetailHeader',
+  props: {
+    sightName: String
+  },
   data () {
     return {
       showAbs: true,
@@ -43,11 +46,11 @@ export default {
     }
   },
   // 设置滚动监听 绑定在window的事件监听 不用的时候一定要删除
-  activated () {
+  mounted () {
     window.addEventListener('scroll', this.handleScroll)
   },
   // deactivated的时候要销毁事件监听,不然会在其他组件也监听滚动
-  deactivated () {
+  unmounted () {
     // console.log('解绑')
     window.removeEventListener('scroll', this.handleScroll)
   }

@@ -19,8 +19,8 @@ export default new Router({
       component: City
     },
     {
-      // path: '/detail/:id',
-      path: '/detail',
+      path: '/detail/:id',
+      // path: '/detail',
       name: 'Detail',
       component: Detail
     }
