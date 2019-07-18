@@ -104,3 +104,10 @@ axios获取cities数据并进行渲染
 通过vuex 将定位获得的city更新到state  
 并且点击city列表和搜索结果的列表也会更新首页城市  
 点击城市后返回首页
+
+## 第十二次提交
+
+应用localStorage  注意一下 localstorage最好用try catch包裹一下 防止浏览器报错  
+mapState, mapActions, mapMutations 了解这三个指令的应用  
+应用keep-alive 减少ajax请求  
+城市切换时首页内容也做一个替换 json数据修改太庞大,未做修改,实际请求效果可在chrome调试的network中查看 xhr请求  

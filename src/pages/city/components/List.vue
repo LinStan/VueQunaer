@@ -3,11 +3,21 @@
     <div>
       <div class="area">
         <div class="title border-topbottom">
+          当前城市
+        </div>
+        <div class="button-list">
+          <div class="button-wrapper">
+            <!-- mapstate映射后修改取值法 -->
+            <div class="button">{{ this.currentCity }}</div>
+          </div>
+        </div>
+      </div>
+      <div class="area">
+        <div class="title border-topbottom">
           当前定位
         </div>
         <div class="button-list">
           <div class="button-wrapper">
-            <!-- <div class="button">{{ this.$store.state.city }}</div> -->
             <div class="button" @click="handleCityClick(LocationCity)">
               {{ LocationCity }}
             </div>
@@ -48,6 +58,7 @@
 </template>
 <script>
 import Bscroll from 'better-scroll'
+import { mapState, mapActions, mapMutations } from 'vuex'
 export default {
   name: 'CityList',
   props: {
@@ -55,14 +66,26 @@ export default {
     cities: Object,
     hotCities: Array,
     letter: String },
+  // mapState映射
+  computed: {
+    ...mapState(
+      {
+        currentCity: 'city'
+      }
+    )
+  },
   methods: {
     handleCityClick (city) {
       // 触发vuex内的action
-      this.$store.dispatch('changeCity', city)
+      // this.$store.dispatch('changeCity', city)
+      this.changeCity(city)
       // console.log(city)
       this.$router.push('/')
-    }
-  }, // this.$nextTick 的回调函数中初始化 better-scroll 。这个时候，wrapper 的 DOM 已经渲染了
+    },
+    ...mapActions(['changeCity']),
+    ...mapMutations(['updateLocation'])
+  },
+  // this.$nextTick 的回调函数中初始化 better-scroll 。这个时候，wrapper 的 DOM 已经渲染了
   // 可以正确计算它以及它内层 content 的高度，以确保滚动正常。
   mounted () {
     this.$nextTick(() => {
@@ -85,8 +108,7 @@ export default {
     // 添加监听，当LocationCity变化，将其更新到vuex的state内
     LocationCity () {
       if (this.LocationCity !== '正在定位') {
-        // console.log(this.LocationCity)
-        this.$store.commit('updateLocation', this.LocationCity)
+        this.updateLocation(this.LocationCity)
       }
     }
   }

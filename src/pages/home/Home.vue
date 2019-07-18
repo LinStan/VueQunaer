@@ -18,6 +18,7 @@ import HomeIcons from './components/Icons'
 import HomeRecommend from './components/Recommend'
 import HomeWeekend from './components/Weekend'
 import axios from 'axios'
+import { mapState } from 'vuex'
 export default {
   name: 'Home',
   components: { HomeHeader,
@@ -28,18 +29,21 @@ export default {
   },
   data () {
     return {
-      city: '温州',
       swiperList: [],
       iconList: [],
       recommendList: [],
-      weekendList: []
+      weekendList: [],
+      lastCity: ''
       // LocationCity: '正在定位'
 
     }
   },
+  computed: {
+    ...mapState(['city'])
+  },
   methods: {
     getHomeInfo () {
-      axios.get('/api/index.json').then(
+      axios.get('/api/index.json?city=' + this.city).then(
         this.getHomeInfoSuccc
       )
     },
@@ -48,30 +52,25 @@ export default {
       res = res.data
       const data = res.data
       if (res.ret) {
-        this.city = data.city
         this.swiperList = data.swiperList
         this.iconList = data.iconList
         this.recommendList = data.recommendList
         this.weekendList = data.weekendList
       }
-
-      // console.log(res)
     }
-    // getCity () { // 定义获取城市方法
-    //   const geolocation = new BMap.Geolocation()
-    //   var _this = this
-    //   geolocation.getCurrentPosition(function getinfo (position) {
-    //     let city = position.address.city // 获取城市信息
-    //     // let province = position.address.province // 获取省份信息
-    //     _this.LocationCity = city
-    //   }, function (e) {
-    //     _this.LocationCity = '定位失败'
-    //   }, { provider: 'baidu' })
-    // }
   },
   mounted () {
     this.getHomeInfo()
+    this.lastCity = this.city
     // this.getCity()
+  },
+  // 当城市变化，重新发送ajax请求 并更新last city
+  activated () {
+    console.log('activited', this.lastCity, this.city)
+    if (this.lastCity !== this.city) {
+      this.getHomeInfo()
+      this.lastCity = this.city
+    }
   }
 }
 </script>
