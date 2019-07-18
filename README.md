@@ -117,3 +117,10 @@ mapState, mapActions, mapMutations 了解这三个指令的应用
 详情页的基本布局  
 背景渐变的css写法  
 background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));  
+
+## 第十四次提交
+
+完成点击detailBanner 出现的可翻看画廊组件布局以及逻辑实现  
+注意一下画廊组件的CSS写法  由于swiper内置css有overflow hidden的属性,需要写一个css穿透来修改该属性为inherit  
+完成Detail中的Header栏随着滑动渐隐并变换  
+注意 滚动监听事件的解绑  通过activated和deactivated两个生命钩子函数实现  
