@@ -2,10 +2,14 @@
   <div>
     <div class="recommend-title">热销推荐</div>
     <ul v-if="this.recommendList.length">
-      <li
+      <!-- 动态绑定路由跳转 tag修改routerlink的类型 -->
+      <!-- :to="'./detail' + item.id" -->
+      <router-link
+        tag="li"
         class="item border-bottom"
         v-for="item of recommendList"
         :key="item.id"
+        :to="'/detail'"
       >
         <div class="item-img-wrapper">
           <img :src="item.imgurl" :alt="item.id" class="item-img" />
@@ -15,7 +19,7 @@
           <p class="item-desc">{{ item.desc }}</p>
           <button class="item-button">查看详情</button>
         </div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>

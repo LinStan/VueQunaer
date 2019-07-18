@@ -111,3 +111,9 @@ axios获取cities数据并进行渲染
 mapState, mapActions, mapMutations 了解这三个指令的应用  
 应用keep-alive 减少ajax请求  
 城市切换时首页内容也做一个替换 json数据修改太庞大,未做修改,实际请求效果可在chrome调试的network中查看 xhr请求  
+
+## 第十三次提交
+
+详情页的基本布局  
+背景渐变的css写法  
+background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));  
