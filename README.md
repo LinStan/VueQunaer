@@ -136,3 +136,12 @@ axios获取detail组件内容
 
 给Gallary添加了一个简单的动画效果  
 应用插槽slot和vue动画v-enter, v-leave-to | v-enter-active, v-leave-active  
+
+## 最终提交
+
+真机测试的时候发现点击事件在手机上无效，经检查发现是better-scroll引起的  
+其默认阻止touch事件，需要加上配置即可
+
+```javascript
+this.scroll=new Bscroll(this.$refs.wrapper, { mouseWheel: true, click: true, tap: true })
+```

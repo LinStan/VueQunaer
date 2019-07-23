@@ -89,7 +89,7 @@ export default {
   // 可以正确计算它以及它内层 content 的高度，以确保滚动正常。
   mounted () {
     this.$nextTick(() => {
-      this.scroll = new Bscroll(this.$refs.wrapper, {})
+      this.scroll = new Bscroll(this.$refs.wrapper, { mouseWheel: true, click: true, tap: true })
     })
   },
   // 监听letter

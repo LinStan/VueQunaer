@@ -8,6 +8,7 @@ import fastClick from 'fastclick'
 // 第三方轮播插件
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import store from './store/index'
+import 'babel-polyfill'
 import 'styles/border.css'
 import 'styles/reset.css'
 import 'styles/iconfont.css'
